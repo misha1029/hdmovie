@@ -13,3 +13,4 @@ export const GenresMenu: FC = () => {
 		<Menu menu={{ title: 'Popular genres', items: data || [] }} />
 	)
 }
+{/* <SleletonLoader count = {5} className = "h-7 mt-6"/> */}
