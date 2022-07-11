@@ -1,7 +1,8 @@
+import { SleletonLoader } from 'components/ui/Skeleton/SleletonLoader'
 import React, { FC } from 'react'
 
 export const FavoriteMovies: FC = () => {
   return (
-    <div>FavoriteMovies</div>
+    <div>Favorite</div>
   )
 }

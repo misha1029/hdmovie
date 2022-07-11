@@ -10,10 +10,9 @@ export const PopularMovies = () => {
 		'Popular movies in sidebar',
 		() => MovieService.getMostPopularMovies()
 	)
-	return isLoading ? (
+	return (isLoading ? (
 		<div className="mt-11">
-			{/* <SleletonLoader count={3} className="h-28 mb-4" /> */}
-            Loading...
+			<SleletonLoader count={3} className="h-28 mb-4" />
 		</div>
 	) : (
 		<MoviesList
@@ -21,5 +20,5 @@ export const PopularMovies = () => {
 			movies={popularMovies || []}
 			title="Popular Movies"
 		/>
-	)
+	))
 }
