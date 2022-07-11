@@ -1,6 +1,10 @@
 import Layout from 'components/layout/Layout'
 import React, { FC, ReactNode } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { Provider } from 'react-redux'
+import { store } from 'store/store'
+
+import { ReduxToast } from './ReduxToast'
 
 interface LayoutProps {
 	children: ReactNode
@@ -16,8 +20,11 @@ const quryCliend = new QueryClient({
 
 export const MainProvaiders = ({ children }: LayoutProps) => {
 	return (
-		<QueryClientProvider client={quryCliend}>
-			<Layout>{children}</Layout>
-		</QueryClientProvider>
+		<Provider store = {store}>
+			<QueryClientProvider client={quryCliend}>
+				<ReduxToast />
+				<Layout>{children}</Layout>
+			</QueryClientProvider>
+		</Provider>
 	)
 }
