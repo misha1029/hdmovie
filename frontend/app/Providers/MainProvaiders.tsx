@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'
 import { store } from 'store/store'
 
+import { HeadProvider } from './HeaderProvider/HeadProvider'
 import { ReduxToast } from './ReduxToast'
 
 interface LayoutProps {
@@ -20,11 +21,13 @@ const quryCliend = new QueryClient({
 
 export const MainProvaiders = ({ children }: LayoutProps) => {
 	return (
-		<Provider store = {store}>
-			<QueryClientProvider client={quryCliend}>
-				<ReduxToast />
-				<Layout>{children}</Layout>
-			</QueryClientProvider>
-		</Provider>
+		<HeadProvider>
+			<Provider store={store}>
+				<QueryClientProvider client={quryCliend}>
+					<ReduxToast />
+					<Layout>{children}</Layout>
+				</QueryClientProvider>
+			</Provider>
+		</HeadProvider>
 	)
 }
