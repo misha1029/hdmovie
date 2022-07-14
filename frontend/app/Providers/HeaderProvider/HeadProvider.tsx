@@ -5,11 +5,11 @@ import React, { FC, ReactNode } from 'react'
 
 import FavIcons from './Fovicons'
 
-interface LayoutProps {
+interface HeadProviderProps {
 	children: ReactNode
 }
 
-export const HeadProvider: FC<LayoutProps> = ({ children }) => {
+export const HeadProvider: FC<HeadProviderProps> = ({ children }) => {
 	return (
 		<>
 			<NextProgressBar
@@ -24,9 +24,7 @@ export const HeadProvider: FC<LayoutProps> = ({ children }) => {
 					name="viewport"
 					content="width=device-width, initial-scale=1, maximum-scale=1.0"
 				/>
-
 				<FavIcons />
-
 				<meta name="theme-color" content={'#181B1E'} />
 				<meta name="msapplication-navbutton-color" content={'#181B1E'} />
 				<meta

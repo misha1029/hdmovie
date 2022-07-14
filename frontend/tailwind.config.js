@@ -78,6 +78,8 @@ module.exports = {
     },
   },
   plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
     plugin(({addComponents, theme, addUtilities}) => {
       addComponents({
         '.btn-primary': {
@@ -88,6 +90,12 @@ module.exports = {
           '&:hover': {
             backgroundColor: '#ff0609',
           }
+        },
+        '.air-block': {
+          backgroundColor: "#101215",
+          calor: '#FFF',
+          borderRadius: '0.8rem',
+          boxShadow: '0 10px 15px -3px rgba(0 0 0 0.1)'
         },
         '.text-link': {
           textUnderlineOffset: 4,

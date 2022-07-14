@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "react-loading-skeleton": "^3.1.0"
+    "@hookform/resolvers": "^2.9.5",
+    "react-hook-form": "^7.33.1",
+    "react-loading-skeleton": "^3.1.0",
+    "yup": "^0.32.11"
   }
 }
