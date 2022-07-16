@@ -2,6 +2,6 @@ import { reducer as toastsReducer } from 'react-redux-toastr'
 import { reducer as userReducer } from './user/user.slice'
 
 export const reducers = {
-	toastr: toastsReducer,
 	user: userReducer,
+	toastr: toastsReducer,
 }

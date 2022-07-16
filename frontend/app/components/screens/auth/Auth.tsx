@@ -9,6 +9,7 @@ import styles from './Auth.module.scss'
 import { AuthField } from './AuthField'
 import { IAuthInput } from './auth.iterface'
 import { useAuthRedirect } from './useAuthRedirect'
+import { useActions } from 'hooks/useActions'
 
 const Auth: FC = () => {
 	useAuthRedirect()
@@ -25,12 +26,7 @@ const Auth: FC = () => {
 		mode: 'onChange',
 	})
 
-	const login = (data: any) => {
-		alert(`login ${data}`)
-	}
-	const register = (data: any) => {
-		alert(`register ${data}`)
-	}
+	const {login, register} = useActions()
 
 	const onSubmit: SubmitHandler<IAuthInput> = (data) => {
 		if (type === 'login') login(data)

@@ -12,7 +12,9 @@ export const AuthService = {
 			getAuthUrl('/register'),
 			{ email, password }
 		)
-		if (response.data.accessToken) saveToStorage(response.data)
+		if (response.data.accessToken) {
+			saveToStorage(response.data)
+		}
 		return response
 	},
 	async login(email: string, password: string) {
@@ -20,7 +22,9 @@ export const AuthService = {
 			getAuthUrl('/login'),
 			{ email, password }
 		)
-		if (response.data.accessToken) saveToStorage(response.data)
+		if (response.data.accessToken) {
+			saveToStorage(response.data)
+		}
 		return response
 	},
 	logout() {
@@ -35,7 +39,7 @@ export const AuthService = {
 			{ refreshToken },
 			{ headers: getContentType() }
 		)
-        if (response.data.accessToken) saveToStorage(response.data)
+		if (response.data.accessToken) saveToStorage(response.data)
 		return response
 	},
 }
