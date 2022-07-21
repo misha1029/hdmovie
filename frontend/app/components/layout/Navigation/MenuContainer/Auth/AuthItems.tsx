@@ -24,7 +24,7 @@ export const AuthItems: FC = () => {
 				<MenuItem
 					item={{
 						icon: 'MdOutlineLock',
-						link: "/",
+						link: "/manege",
 						title: 'Admin panel',
 					}}
 				/>
