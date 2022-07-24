@@ -26,4 +26,8 @@ export const GenreService = {
 	async update(_id: string, data: IGenerEditInput) {
 		return axios.put<string>(getGenresUrl(`/${_id}`), data)
 	},
+
+	async create() {
+		return axios.post<string>(getGenresUrl('/'))
+	},
 }

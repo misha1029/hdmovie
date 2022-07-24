@@ -11,7 +11,7 @@ export const usePopularGenres = () => {
 		{
 			select: ({ data }) =>
 				data
-					.map(
+					.filter(genre => genre.icon).map( // filter поможет выбрать существующие жанры которые есть
 						(genre) =>
 							({
 								icon: genre.icon,
