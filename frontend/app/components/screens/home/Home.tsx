@@ -15,5 +15,6 @@ export const Home: FC<IHome> = () => {
 				className="text-gray-300 mb-8 text-xl"
 			/>
 		</Meta>
+		
 	)
 }

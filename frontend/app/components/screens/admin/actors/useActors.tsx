@@ -1,5 +1,6 @@
 import { useDebounce } from 'components/layout/Sidebar/Search/SeachList/useDebounce'
 import { getAdminUrl } from 'config/url.config'
+import { useRouter } from 'next/router'
 import { ChangeEvent, useMemo, useState } from 'react'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
@@ -53,7 +54,23 @@ export const useActors = () => {
 		}
 	)
 
+	const {push} = useRouter()
+
+	const { mutateAsync: createAsync } = useMutation(
+		'create actor',
+		() => ActorService.create(),
+		{
+			onError: (error) => {
+				toastrError(error, 'create actor')
+			},
+            onSuccess: ({data:_id}) => {
+                toastr.success('Create actor', 'create was successful')
+                push(getAdminUrl(`actor/edit/${_id}`))
+            }
+		}
+	)
+
     return useMemo(() => ({
-        handleSearch, ...queryData, searchTerm, deleteAsync
-    }), [queryData,searchTerm, deleteAsync ])
+        handleSearch, ...queryData, searchTerm, deleteAsync, createAsync
+    }), [queryData,searchTerm, deleteAsync, createAsync ])
 }
