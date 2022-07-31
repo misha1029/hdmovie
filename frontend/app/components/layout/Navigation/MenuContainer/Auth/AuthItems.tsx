@@ -6,7 +6,7 @@ import { MenuItem } from '../Menu/MenuItem'
 
 import { LogoutButton } from './LogoutButton'
 
-export const AuthItems: FC = () => {
+const AuthItems: FC = () => {
 	const { user } = useAuth()
 	return (
 		<>
@@ -33,3 +33,5 @@ export const AuthItems: FC = () => {
 
 	)
 }
+
+export default AuthItems;

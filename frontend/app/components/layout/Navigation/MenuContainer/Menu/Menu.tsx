@@ -1,10 +1,14 @@
+import dynamic from 'next/dynamic'
 import { FC } from 'react'
 
-import { AuthItems } from '../Auth/AuthItems'
 import { IMenu } from '../menu.interface'
 
 import styles from './Menu.module.scss'
 import { MenuItem } from './MenuItem'
+
+const DynamicAuthItems = dynamic(() => import('../Auth/AuthItems'), {
+	ssr: false,
+})
 
 export const Menu: FC<{ menu: IMenu }> = ({ menu: { items, title } }) => {
 
@@ -16,7 +20,7 @@ export const Menu: FC<{ menu: IMenu }> = ({ menu: { items, title } }) => {
 					<MenuItem item={item} key={item.link} />
 				))}
 				
-				{title === 'General' ? <AuthItems /> : null}
+				{title === 'General' ? <DynamicAuthItems /> : null}
 			</ul>
 		</div>
 	)

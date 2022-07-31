@@ -34,7 +34,7 @@ const Select: FC<ISelect> = ({
 	}
 	return (
 		<div className={styles.selectContainer}>
-			<div>
+			<p>
 				<span>{placeholder}</span>
 				<ReactSelect
 					classNamePrefix="custom-select"
@@ -45,7 +45,7 @@ const Select: FC<ISelect> = ({
 					components={animatedComponents}
 					isLoading={isLoading}
 				/>
-			</div>
+			</p>
 			{error && <div className={styles.error}>{error.message}</div>}
 		</div>
 	)
