@@ -11,6 +11,9 @@ export const GenreService = {
 			params: searchTerm ? { searchTerm } : {},
 		})
 	},
+	async getBySlug(slug: string) {
+		return axiosClassic.get<IGener>(getGenresUrl(`/by-slug/${slug}`))
+	},
 
 	async getById(_id: string) {
 		return axios.get<IGenerEditInput>(getGenresUrl(`/${_id}`))

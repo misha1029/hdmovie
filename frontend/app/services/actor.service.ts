@@ -10,6 +10,11 @@ export const ActorService = {
 			params: searchTerm ? { searchTerm } : {},
 		})
 	},
+
+	async getBySlug(slug: string) {
+		return axiosClassic.get<IActor>(getActorsUrl(`/by-slug/${slug}`))
+	},
+
 	async deleteActor(_id:string) {
         const result = confirm("Want to delete?");
         if (result){

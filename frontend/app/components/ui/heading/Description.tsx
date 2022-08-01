@@ -10,7 +10,7 @@ export const Description: FC<{ text: string; className?: string }> = ({
 		<div
 			className={cn('text-lg font-light text-white text-opacity-60', className)}
 		>
-			<p>{parce(text)}</p>
+			{parce(text)}
 		</div>
 	)
 }
