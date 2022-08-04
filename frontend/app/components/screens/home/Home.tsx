@@ -20,11 +20,11 @@ export const Home: FC<IHome> = ({ slides, actors, trendingMovies }) => {
 
 			{slides.length && <Slider slides={slides} />}
 
-			<div className="mb-10">
+			<div className="mt-10">
 				<SubHeading title="Trending now" />
 				{trendingMovies.length && <Gallery items={trendingMovies} />}
 			</div>
-			<div className="mb-10">
+			<div className="mt-10">
 				<SubHeading title="Best actors" />
 				{actors.length && <Gallery items={actors} />}
 			</div>
