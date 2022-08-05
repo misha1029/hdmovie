@@ -9,6 +9,7 @@ import { IMoviePage } from '../../../../pages/movie/[slug]'
 
 import { Banner } from './Banner/Banner'
 import { Content } from './Content/Content'
+import { useUpdateCardOpened } from './useUpdateCardOpened'
 
 const DynamicPlayer = dynamic(() => import('../../ui/video-player/VideoPlayer'), {
 	ssr: false,
@@ -19,6 +20,7 @@ const DynamicRating = dynamic(() => import('../../ui/video-player/RateMovie/Rate
 })
 
 export const SingleMovie: FC<IMoviePage> = ({ movie, similarMovies }) => {
+	useUpdateCardOpened(movie.slug)
 	return (
 		<Meta title={movie.title} description={`Watch ${movie.title}`}>
 			<Banner
