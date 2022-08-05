@@ -20,6 +20,7 @@
     "@types/react-draft-wysiwyg": "^1.13.4",
     "@types/react-redux-toastr": "^7.6.2",
     "@types/react-select": "^5.0.1",
+    "@types/react-star-rating-component": "^1.4.1",
     "@types/string-strip-html": "^5.0.1",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
@@ -40,6 +41,7 @@
     "react-redux": "^8.0.2",
     "react-redux-toastr": "^7.6.8",
     "react-select": "^5.4.0",
+    "react-star-rating-component": "^1.4.1",
     "react-transition-group": "^4.4.4",
     "sass": "^1.53.0",
     "string-strip-html": "^11.0.0"

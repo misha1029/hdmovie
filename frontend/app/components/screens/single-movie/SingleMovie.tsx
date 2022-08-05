@@ -14,6 +14,10 @@ const DynamicPlayer = dynamic(() => import('../../ui/video-player/VideoPlayer'),
 	ssr: false,
 })
 
+const DynamicRating = dynamic(() => import('../../ui/video-player/RateMovie/RateMovie'), {
+	ssr: false,
+})
+
 export const SingleMovie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 	return (
 		<Meta title={movie.title} description={`Watch ${movie.title}`}>
@@ -28,6 +32,8 @@ export const SingleMovie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 				<SubHeading title="Similar" />
 				<Gallery items={similarMovies} />
 			</div>
+
+			<DynamicRating id = {movie._id} slug = {movie.slug}/>
 		</Meta>
 	)
 }
