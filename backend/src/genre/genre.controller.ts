@@ -37,7 +37,7 @@ export class GenreController {
 		return this.genreService.getPopular()
 	}
 
-	@Get('/collections')
+	@Get('/dis')
 	async getCollections() {
 		return this.genreService.getCollections()
 	}

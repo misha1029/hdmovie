@@ -61,15 +61,16 @@ export class GenreService {
 
 				const result: ICollection = {
 					_id: String(genre._id),
+					image: moviesByGenre[0].bigPoster,
 					title: genre.name,
 					slug: genre.slug,
-					image: moviesByGenre[0].bigPoster,
-				}
 
+				}
+				
 				return result
 			})
 		)
-
+		console.log(collections, '1111111111111111111111111111111111')
 		return collections
 	}
 

@@ -1,5 +1,6 @@
 import { axiosClassic } from 'api/interceptors'
 import { IGenerEditInput } from 'components/screens/admin/GenerEdit/gener-edit.interface'
+import { ICollection } from 'components/screens/collections/collections.interface'
 import { getGenresUrl } from 'config/api.config'
 import { IGener } from 'shared/types/movie.types'
 
@@ -32,5 +33,8 @@ export const GenreService = {
 
 	async create() {
 		return axios.post<string>(getGenresUrl('/'))
+	},
+	async getCollections() {
+		return axiosClassic.get<ICollection[]>(getGenresUrl(`/dis`))
 	},
 }
