@@ -22,7 +22,6 @@ export interface ITextEditor extends Omit<TypeEditorPropsField, 'editorState'> {
 	value: string
 }
 
-
 export interface IUploadField {
 	folder?: string
 	value?: string
