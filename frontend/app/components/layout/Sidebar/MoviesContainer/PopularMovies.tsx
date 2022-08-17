@@ -8,9 +8,10 @@ import { MoviesList } from './MovieList'
 export const PopularMovies = () => {
 	const { isLoading, data: popularMovies } = useQuery(
 		'Popular movies in sidebar',
-		() => MovieService.getMostPopularMovies()
+		() => MovieService.getMostPopularMovies(),
+		{ select: (data) => data.slice(0, 3) }
 	)
-	return (isLoading ? (
+	return isLoading ? (
 		<div className="mt-11">
 			<SleletonLoader count={3} className="h-28 mb-4" />
 		</div>
@@ -20,5 +21,5 @@ export const PopularMovies = () => {
 			movies={popularMovies || []}
 			title="Popular Movies"
 		/>
-	))
+	)
 }
